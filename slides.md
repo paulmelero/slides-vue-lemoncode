@@ -560,7 +560,7 @@ Defniniendo slots (hijo):
   </main>
 
   <footer>
-    <slot name="footer" :footerCopyright="©️ 2024" />
+    <slot name="footer" :footerCopyright="'©️ 2024'" />
   </footer>
 </template>
 
@@ -653,9 +653,9 @@ const emit = defineEmits<{
   update: [value: string]
 }>()
 
-defineSlots<
+defineSlots<{
   default: () => any
->()
+}>()
 
 defineOptions({
   name: 'MyComponent'
@@ -721,6 +721,10 @@ const props = defineProps<Props>()
 ```vue
 <script setup lang="ts">
 import { defineProps } from 'vue'
+
+interface Props {
+  msg: string
+}
 
 // Con `withDefaults` podemos definir valores por defecto
 const props = withDefaults(
@@ -791,6 +795,8 @@ const todos = reactive([
 
 const reversedTodos = computed(() => todos.reverse())
 const reversedMsg = computed(() => msg.value.split('').reverse().join(''))
+
+console.log(reversedTodos.value, reversedMsg.value) // `.value` para acceder al valor
 </script>
 ```
 
@@ -978,6 +984,145 @@ class: text-center
 <div class="text-center">
   <img src="/lemonade.gif" class="m-auto object-contain max-h-sm" />
 </div>
+
+
+
+---
+layout: custom-cover
+background: vue-sticker.jpg
+---
+
+# Vue - II
+
+## 🌈 Vuenas tardes! 🌈
+
+---
+layout: quote
+---
+
+# Agenda
+
+- Continuamos con el código
+  - Estlos
+  - Chat
+  - OpenAI
+
+- Composition API
+- Refactor con Composables
+
+
+---
+layout: hero-image
+image: /teclado.gif
+class: text-center
+---
+
+# Vuelta a los teclados!
+
+---
+layout: hero-image
+image: /composition-docs.png
+---
+
+## Composition API
+
+
+
+---
+layout: quote
+---
+
+# Docs
+
+<img src="/toggle.png" class="max-h-xs" />
+
+https://vuejs.org/guide/introduction.html
+
+---
+layout: two-cols
+---
+
+# Composition API
+
+![](/comparison.png)
+
+::right::
+
+<v-clicks depth="2">
+
+- Ventajas:
+
+  - Ordenar por features
+  - Incluso módulos/paquetes
+  - Composición de funciones.
+
+- Desventajas:
+
+  - Arquitectura menos definida
+  - Requiere más conocimientos de Vue y JS
+  - Llamadas asíncronas requieren `<Suspense>`
+
+</v-clicks>
+
+
+---
+layout: image
+image: /side-by-side.jpeg
+title: Code Side by Side
+---
+
+
+---
+layout: image
+image: /setup-diagram.png
+title: Setup()
+---
+
+---
+layout: full
+---
+
+# Mimimimi
+
+<div class="grid grid-cols-[1fr_5fr]">
+  <img src="/brain.png" class="m-auto object-contain max-h-sm" />
+
+  <section>
+    <div v-click="1">
+      <h3>Options API</h3>
+      <a href="https://codesandbox.io/s/traductor-mimimi-vue-3-uie1x" target="_blank">https://codesandbox.io/s/traductor-mimimi-vue-3-uie1x</a>
+    </div>
+    <div v-click="2" class="mt-10">
+      <h3>Composition API con setup()</h3>
+      <a href="https://codesandbox.io/s/traductor-mimimi-vue-3-composition-api-tuip2" target="_blank">https://codesandbox.io/s/traductor-mimimi-vue-3-composition-api-tuip2</a>
+    </div>
+    <div v-click="3" class="mt-9">
+      <h3>Composition API con <code>&lt;script setup&gt;</code></h3>
+      <a href="https://codesandbox.io/s/traductor-mimimi-vue-3-composition-api-script-setup-sbf4yn?file=/src/App.vue" target="_blank">https://codesandbox.io/s/traductor-mimimi-vue-3-composition-api-script-setup-sbf4yn?file=/src/App.vue</a>
+    </div>
+    <div v-click="4" class="mt-2">
+      <h3>Composables con <code>&lt;script setup&gt;</code></h3>
+      <a href="https://codesandbox.io/s/traductor-mimimi-vue-3-composition-api-composables-84t5x?file=/src/App.vue" target="_blank">https://codesandbox.io/s/traductor-mimimi-vue-3-composition-api-composables-84t5x?file=/src/App.vue</a>
+    </div>
+  </section>
+</div>
+
+---
+layout: image
+image: /lego.jpeg
+title: Composables (Lego)
+---
+
+---
+layout: hero-image
+image: /teclado.gif
+class: text-center
+---
+
+# Vamos a seguir!! 🚀
+
+
+
 
 ---
 layout: end
