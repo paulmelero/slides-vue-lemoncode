@@ -246,3 +246,432 @@ const { data } = await useFetch('/api/item')
 
 </script>
 ```
+
+---
+layout: quote
+---
+
+# Nuxt en práctica (mini‑app + recetas)
+
+---
+layout: full
+title: Estructura mínima (para trabajar cómodo)
+---
+
+# Estructura mínima de Nuxt
+
+```md
+-| app.vue
+-| pages/
+---| index.vue
+---| products/
+-----| [id].vue
+-| components/
+---| AppHeader.vue
+-| layouts/
+---| default.vue
+-| composables/
+---| useCart.ts
+```
+
+### Otras carpetas
+
+```md
+-| middleware/
+----| auth.ts
+-| server/
+----| api/
+------| products.get.ts
+------| products/[id].get.ts
+```
+
+<v-clicks depth="2">
+
+- **Idea clave**: Nuxt conecta "carpetas" con "comportamiento" (rutas, API, middleware, plugins).
+- <strong v-mark="{ at:2, type:'highlight', color: '#008f53' }">🚀 Mini-reto</strong>: crea estas carpetas y deja archivos vacíos → observa cómo Nuxt "entiende" el proyecto.
+
+</v-clicks>
+
+---
+layout: two-cols
+title: App shell (app.vue)
+---
+
+## `app.vue` = el "wrapper" global
+
+```vue
+<template>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
+</template>
+```
+
+<v-clicks depth="2">
+
+- **`NuxtLayout`**: aplica el layout actual.
+- **`NuxtPage`**: renderiza la página según la ruta.
+
+</v-clicks>
+
+::right::
+
+<v-clicks depth="2">
+
+<h2 v-mark="{ at: 3,type:'highlight', color: '#008f53' }">🚀 Mini-reto</h2>
+
+- Crea `layouts/default.vue` con un header.
+- Crea `components/AppHeader.vue` y úsalo en el layout.
+
+</v-clicks>
+
+---
+layout: full
+title: Layouts (sin duplicar UI)
+---
+
+# Layouts: estructura reutilizable (normalmente `header`/`footer`)
+
+```vue
+<!-- layouts/default.vue -->
+<template>
+  <AppHeader />
+  <main class="container mx-auto p-6">
+    <slot />
+  </main>
+  <AppFooter />
+</template>
+```
+
+```vue
+<!-- layouts/admin.vue -->
+<template>
+  <div class="grid grid-cols-[220px_1fr] min-h-screen">
+    <aside class="p-4 border-r">Admin</aside>
+    <main class="p-6"><slot /></main>
+  </div>
+
+</template>
+```
+
+<!-- - **Siguiente Práctica**: cambiar el "layout" en una página sin tocar los componentes en el archivo de la página. -->
+
+
+---
+layout: two-cols
+title: Metadatos por página
+---
+
+## `definePageMeta()`
+
+```vue
+<script setup lang="ts">
+definePageMeta({
+  layout: 'admin',
+  middleware: ['auth'],
+})
+</script>
+```
+
+<v-clicks depth="2">
+
+- Elige layout por página.
+- Activa middleware por página.
+
+</v-clicks>
+
+::right::
+
+<v-clicks depth="2">
+
+<h2 v-mark="{ at: 3, type:'highlight', color: '#008f53' }">🚀 Mini-reto</h2>
+
+- Crea `pages/admin.vue`.
+- Ponle `layout: 'admin'`.
+- Comprueba el cambio visual.
+
+</v-clicks>
+
+---
+layout: two-cols
+title: Navegación
+---
+
+## Navegación con `NuxtLink`
+
+```vue
+<template>
+  <NuxtLink to="/">Home</NuxtLink>
+  <NuxtLink :to="{ name: 'products-id', params: { id: 1 } }">
+    Producto 1
+  </NuxtLink>
+</template>
+```
+
+::right::
+
+## Navegación programática
+
+```ts
+const router = useRouter()
+await router.push('/products/1')
+```
+
+---
+layout: two-cols
+title: Estado global sin librerías
+---
+
+## Estado compartido con `useState()`
+
+```ts
+// composables/useCart.ts
+export const useCart = () => {
+  const items = useState<number[]>('cart-items', () => [])
+
+  const add = (id: number) => items.value.push(id)
+  const remove = (id: number) =>
+    (items.value = items.value.filter(x => x !== id))
+
+  return { items, add, remove }
+}
+```
+
+<v-clicks depth="2">
+
+- **SSR-friendly**: Nuxt serializa el estado necesario.
+- **Clave**: la key (`'cart-items'`) identifica el estado global.
+
+</v-clicks>
+
+::right::
+
+<v-clicks depth="2">
+
+<h2 v-mark="{ type:'highlight', color: '#008f53' }">🚀 Mini-reto</h2>
+
+- En `AppHeader`, muestra `items.value.length`.
+- En `pages/products/[id].vue`, añade un botón "Añadir al carrito".
+
+</v-clicks>
+
+---
+layout: full
+title: Middleware (protección de rutas)
+---
+
+# Middleware: protege rutas en 10 líneas
+
+```ts
+// middleware/auth.ts
+export default defineNuxtRouteMiddleware(() => {
+  const isLoggedIn = useState<boolean>('auth', () => false)
+
+  if (!isLoggedIn.value) {
+    return navigateTo('/login')
+  }
+})
+```
+
+<v-clicks depth="2">
+
+- **Uso típico**: dashboard/admin, checkout, rutas privadas.
+- <strong v-mark="{ at: 2, type:'highlight', color: '#008f53' }">🚀 Mini-reto</strong>: crea `pages/login.vue` y un botón "Entrar" que ponga `auth=true`.
+
+</v-clicks>
+
+---
+layout: two-cols
+title: Backend integrado (Nitro)
+---
+
+## API en `server/api/*`
+
+```ts
+// server/api/products.get.ts
+export default defineEventHandler(() => {
+  return [
+    { id: 1, name: 'Limonada clásica' },
+    { id: 2, name: 'Limonada con menta' },
+  ]
+})
+```
+
+::right::
+
+## Consumir desde una página
+
+```ts
+const { data: products } = await useFetch('/api/products')
+```
+
+---
+layout: full
+title: "Tip: API dinámica + 404"
+---
+
+# API dinámica + 404 con `createError()`
+
+```ts
+// server/api/products/[id].get.ts
+export default defineEventHandler((event) => {
+  const id = Number(getRouterParam(event, 'id'))
+  const product = { id, name: `Producto ${id}` }
+
+  if (!Number.isFinite(id) || id <= 0) {
+    throw createError({ statusCode: 400, statusMessage: 'ID inválido' })
+  }
+
+  // Ejemplo: si no existe...
+  if (id > 99) {
+    throw createError({ statusCode: 404, statusMessage: 'No encontrado' })
+  }
+
+  return product
+})
+```
+
+---
+layout: two-cols
+title: Runtime config (público vs privado)
+---
+
+## "Runtime Config" en `nuxt.config.ts`
+
+```ts
+export default defineNuxtConfig({
+  runtimeConfig: {
+    apiSecret: '', // solo server
+    public: {
+      apiBase: '/api',
+    },
+  },
+})
+```
+
+::right::
+
+## Leer config
+
+```ts
+const config = useRuntimeConfig()
+const base = config.public.apiBase
+```
+
+---
+layout: full
+title: SEO por página (sin magia)
+---
+
+# SEO práctico: `useSeoMeta()`
+
+```ts
+useSeoMeta({
+  title: 'Producto | Nuxt Shop',
+  description: 'Detalle del producto',
+  ogTitle: 'Producto | Nuxt Shop',
+  ogDescription: 'Detalle del producto',
+})
+```
+
+<v-clicks depth="2">
+
+- <strong v-mark="{ at: 1, type:'highlight', color: '#008f53' }">🚀 Mini-reto</strong>: ponlo en `pages/products/[id].vue` y cambia el title según el producto.
+
+</v-clicks>
+
+---
+layout: two-cols
+title: Plugins (una "capa" para tu app)
+---
+
+## Plugin: expón un cliente `$api`
+
+```ts
+// plugins/api.ts
+export default defineNuxtPlugin(() => {
+  const api = $fetch.create({ baseURL: '/api' })
+  return { provide: { api } }
+})
+```
+
+::right::
+
+## Uso en componentes/pages
+
+```ts
+const { $api } = useNuxtApp()
+const product = await $api(`/products/1`)
+```
+
+<v-clicks depth="2">
+
+- `useNuxtApp()` para obtener el contexto de la aplicación (plugins, vue app, ssr context, etc.).
+
+</v-clicks>
+
+
+---
+layout: full
+title: Composables
+---
+
+# Composables de Nuxt
+
+<v-clicks>
+
+- `useFetch()`
+- `useAsyncData()`
+- `useState()`
+- `useRouter()`
+- `useRoute()`
+- `useSeoMeta()`
+- `useRuntimeConfig()`
+- `useNuxtApp()`
+
+</v-clicks>
+
+
+
+---
+layout: quote
+---
+
+# Checklist de Nuxt para proyectos reales
+
+<v-clicks depth="2">
+
+- Layouts + navegación (`NuxtLayout`, `NuxtLink`)
+- Estado global con `useState` (si hace falta, luego Pinia)
+- Middleware para proteger rutas
+- API con Nitro (`server/api/*`) + errores con `createError`
+- `runtimeConfig` para variables de entorno
+- SEO por página con `useSeoMeta`
+- Caché de datos con `useAsyncData()` y cache keys dinámicas
+
+</v-clicks>
+
+---
+layout: full
+title: Overview del mini-proyecto
+---
+
+# Overview del mini‑proyecto (lo que montamos con los mini‑retos)
+
+<v-clicks depth="2">
+
+- **Objetivo**: una mini‑app e-commerce con rutas, SSR/data, estado global, backend integrado y páginas protegidas.
+- **Piezas que construimos**:
+  - `app.vue` → `NuxtLayout` + `NuxtPage`
+  - `layouts/default.vue` → wrapper público (header/footer)
+  - `layouts/admin.vue` + `pages/admin.vue` → wrapper admin (sidebar)
+  - `middleware/auth.ts` + `pages/login.vue` → protección de rutas + login fake con `useState('auth')`
+  - `composables/useCart.ts` + `AppHeader` → carrito global con `useState('cart-items')`
+  - `server/api/products*.ts` → API con Nitro + errores 400/404 con `createError`
+  - `useFetch`/`useAsyncData` → consumo SSR-friendly + cache keys
+  - `useRuntimeConfig` → config por entorno (public/private)
+  - `useSeoMeta` → title/description por página
+  - `plugins/api.ts` + `useNuxtApp()` → cliente `$api` centralizado (opcional)
+
+</v-clicks>
+

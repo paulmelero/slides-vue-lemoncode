@@ -1178,7 +1178,7 @@ layout: statement
 
 ---
 layout: two-cols
-title: `<script setup>`
+title: script setup
 ---
 
 # Ejemplos
