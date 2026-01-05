@@ -2058,6 +2058,134 @@ layout: quote
 
 
 ---
+layout: statement
+title: Nuxt
+---
+
+# <logos-nuxt-icon /> Nuxt
+
+---
+layout: two-cols
+title: Nuxt - Características principales
+---
+
+<style>
+ul li {
+  font-size: .9rem;
+}
+</style>
+
+<v-clicks depth="2">
+
+  - **Zero-config**: Configuración mínima para empezar
+  - **File-based routes**: Rutas dinámicas y anidadas
+  - **Data fetching** (_opinionando_)
+  - **Backend** (APIs) integrado (con Nitro)
+  - **Middleware** (https://nuxt.com/docs/4.x/directory-structure/app/middleware)
+  - Transiciones: animaciones entre páginas
+  - **SEO** (Search Engine Optimization)
+  - **Optimización de _assets_** integrada
+  - **Error-handling**
+  - **Layouts**
+  - **Diferentes modos de renderizado**:
+    - Server Side Rendering (SSR)
+    - Generación de sitios estáticos (SSG, JAMStack)
+    - Single Page Application (SPA)
+    - Modos Híbridos (SSR + SPA)
+    - Islas (Componentes que se renderizan en el servidor y no son interactivos)
+
+</v-clicks>
+
+::right::
+
+<v-clicks depth="3">
+
+  - **Vite** (servidor de desarrollo y bundler)
+    - Code-splitting
+    - Hot Module Reloading (HMR)
+    - OXC-compatible (https://es.vite.dev/guide/rolldown)
+  - **Type-safe**: TypeScript
+    - Typechecking/Build
+    - Auto generated types
+      - [Auto Imports](https://nuxt.com/docs/4.x/guide/concepts/auto-imports)
+      - [API route types](https://nuxt.com/docs/4.x/guide/concepts/server-engine#typed-api-routes)
+  - **Ecosistema de módulos** (https://nuxt.com/modules)
+  - Y otras características de Nuxt:
+    - **Hooks**
+    - **Components/Composables**
+    - **Plugins**
+    - **Runtime config**
+    - **Layers**
+    - **DevTools**
+
+</v-clicks>
+
+
+---
+layout: quote
+---
+
+# Progressive Enhacement
+
+No necesitamos todas las funcionalidades de Nuxt. Podemos usar solo lo que necesitamos y el bundle final será más pequeño.
+
+---
+layout: two-cols
+title: Progressive Enhacement
+---
+
+<style>
+img.max-h-xs {
+  max-height: none;
+}
+</style>
+
+
+## Estructura de carpetas inicial
+
+<br />
+
+<img src="/nuxt-inicio.png" class="max-h-xs" />
+
+
+::right::
+
+<v-click>
+
+## Ejemplo de app compleja
+
+<br />
+
+<img src="/nuxt-completo.png" class="max-h-xs" />
+</v-click>
+
+---
+layout: quote
+---
+
+# Universal rendering (SSR)
+
+
+---
+layout: full
+title: Universal rendering
+---
+
+# Universal rendering (SSR)
+<div class="flex justify-center relative">
+  <logos-nodejs-icon class="absolute top-1/2 left-0 text-6xl" />
+  <ri-arrow-right-line class="absolute top-1/2 left-[70px] text-6xl" />
+  <p class="absolute top-[calc(50%+.3rem)] left-[140px] text-xl">Document (sin JS)</p>
+  <ri-arrow-right-line class="absolute top-[calc(50%+1rem)] left-[310px] text-3xl" v-click="1" />
+  <p class="absolute top-[calc(50%+.3rem)] left-[350px] text-2xl" v-click="1">Naveador carga<br />todo el HTML<br /> y ejecuta el JS</p>
+  <ri-arrow-right-line class="absolute top-[calc(50%+1rem)] left-[515px] text-3xl" v-click="2" />
+  
+  <img src="/ssr.svg" />
+  <img src="/js-logo.png" class="absolute top-1/3 right-0 max-w-[140px] h-auto" v-click="2" />
+</div>
+
+
+---
 layout: end
 ---
 
