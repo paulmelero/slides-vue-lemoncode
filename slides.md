@@ -1874,92 +1874,6 @@ layout: two-cols
 
 
 ---
-layout: section
----
-
-# Práctica guiada: bloc de notas
-
-<!-- image centered -->
-<div class="text-center">
-  <img src="/cortar.gif" class="m-auto object-contain max-h-[24rem]" />
-</div>
-
----
-layout: default
----
-
-# Qué vamos a construir
-
-<v-clicks>
-
-- Un **bloc de notas** con contador de palabras.
-- Empezamos con `<script setup>` y acabamos con composables.
-- Cada checkpoint tiene un playground embebido: cambia el código y prueba.
-- Al final, une todo en una mini-app.
-
-</v-clicks>
-
----
-layout: default
----
-
-## Checkpoint 1 · `<script setup>`
-
-<Playground url="https://play.vuejs.org/#eNp9U9GK2zAQ/JVFUJLQ2E442oJjp/SOe2gf2tL2US+KvbF1lSUhrRKnJv9+yL6kgZZ7EzOzszOLPbBP1qaHgCxnha+ctAQeKVhQQjclZ+Q523ItO2scwQAO90uoTGcDYQ1n2DvTwewQcMY115XRnkAbQiijdD6bLS7o0bj6wQRNUF4N5vMFlFuuYZxJD0IFTMnJbr6Aj/9iqbdK0jzj3L/NFqlC3VALOay4XnBdZFOBbUxSEHZWCcLRveiE1OMLoGjX23tlKqgxbhC+yNr1hSPsSTgUcEg6U6MqOYspOANnjr7kbL3iDKwSFbZG1ehKzh7j2h1C0GI0TNOUM8gulnY7DDflz2ewQomdE3O/KDI75cteAhbZTW6uC08nFZ87U59ggL3RlOxFJ9UpB3/yhF0S5BK80D7x6OR+A51wjdQ5rDZgRV1L3eSwdtht4Mx1XAMDdKJPjrKmNoe79yN3nQIRyIza6y0GeNGuV6s3G9iZPvHyz2i8M65Gl+xMf7Mt/fBu9Ixpc5C6RSdptCyyqRBbMvKV0XvZpE/eaJazId6Bs/hlSIXumyVptOcsh2E6JGdCKXP8MmLkAi4veNVi9fs/+JPvI8bZd4ce3QE5u3IkXIM00Y8/v2JPN2Rn6qDwVfIHeqNCzDjJ7oOuFbob3Zj28/jfSN388o89ofaXUjFoVJ6XU+9DwIdXqv+Ne5fejXNcn9n5GVwSP6M=" label="Checkpoint 1: script setup" />
-
----
-layout: default
----
-
-## Checkpoint 2 · componentes
-
-<Playground url="https://play.vuejs.org/#eNqFVE2P0zAQ/SsjC9RUtEmrFSClSYFFPcBhWbGIC+bgJtPUi2Nb9qQfRP3vyMn2A7Hs3qx5b+a9sZ/csg/WxpsGWcoyXzhpCTxSY0EJXeWckedszrWsrXEELThcjaAwtW0ISzjAypkaBpsGByfSjSFclJKMe0DjJDQYjZp8ckbjvovrwmhPoA0h5EEgGgyGx+rWuPKjaTRBfpKNoiHkc66h64k3QjUYk5N1NIR3/9Zib5WkKOHcv0qGsUJd0RpSmHA95DpL+rXnwUlGWFslCLvpWS2k7k4A2Xo6v1amgBKDgvBZsp4esYuNN+PalKhyzoIPziA5kuy8bS/WORzACiWWTkR+mCW2V0weJLPkwgnXmae9CselKffQwspoGq9ELdU+Bb/3hPW4kSPwQvuxRydXM6iFq6ROYTIDK8pS6iqFqcN6Bgeugwy0UIvdeCtLWqdw9abDTl0gGjIdl3BHwqGAFh6408nk5QyWZjf28nc3eGlciW68NLsLtfjt625mcJuC1Gt0krqRWdIvxEbsv9F4JpElrqTGW2esj1roLv17ePQU7shJXcHhlCGsZYhP37GoJfnox6CxpSBMz42Dn8+k4XgP/XumXcRyzs4TOOshZ7Y+52w6ORasEgWujSrR5ZwtgsQSodGii1Icx0fie6ltQzlnwXL0iMcRvMANaopJuAqpz/mwb0/+zg0bMfKF0StZxffeaJayNtB4d+VSoftiSRrtOUuh7fU5E0qZ7eeuRq7B0bFerLH49Uj93u9CjbNbhx7dBjk7Yb3HHl7c3eCOLsDalI3CJ8Gv6I1qgseedt3oUqG74HVuP3XfjtTVN7/YEWp/XCoYDczDqN970+DHJ1Y/272Kr7o+rg/s8AePJL0m" label="Checkpoint 2: componentes" />
-
----
-layout: default
----
-
-## Checkpoint 3 · slots
-
-<Playground url="https://play.vuejs.org/#eNqVVcFu4zYQ/ZUB28I2akv2Bm0BRXLaDXxoD+miW/RS9kBLY4tbihTIkeNU8L8XJC3ZabJZ1Cd5Zt7Mm0c+qWc/tW1y6JBlLHellS2BQ+paUELvC87IcbbmWjatsQQ9WNzNoTRN2xFWcIKdNQ1MDh1OxqIHQ7ipJBl7ziapBxiNmlx6ySYvUPfCVp/D+NwZwXVptCPQhhAKT2k6mcyG6KOx1b3pNEExEp1OZ1CsuYaASQ5CdZiQlc10BncvY4lrlaRpyrn7Np0lCvWeashgyfWM6zyNQq09k5ywaZUgDN3zRkgdngDyerV+r0wJFfoJwuVpvRpy47ZZ6akWnI20g94QfmNz+KpGUaEdM779u/WDIQGipE6oPK3fXXDpFasxeHUuh0VjKlQFZ353ziC9LrxM3RlDaAvOegg84XTFDiBv1/2YOUErlNhaMXWzPG1fJxMDw/ZRs/Qs2n9Y546elH/cmuoJetgZTYudaKR6ysA9OcJm0ck5OKHdwqGVu1tohN1LncHyFlpRVVLvM1hZbG7hxLUfAz004rh4lBXVGdx8H3IjCkRHJtQSHklYFNDDuXa1XH5zC1tzXDj5T2i8NbZCu9ia49W05IfvQk/PNgOpa7SSQss8jQuxOfusHb7gwgp3UuMHa1o37SEc4R/+2mbwkazUeziNLsBGegNExKaR5KZ/Trq2EoTZBTj56wv3edAhnlwWTFJwdunAWUxZ8+gKzlbLIdAqUWJtVBXuz8aP2CJ0WgQzJEkyFP4oddt5B3jK01c4zuFrPKCmhITdI0WnziI8fX5vXmo7vDb+l7LhRmfw0DVbtEHUtzRyWJI0GkolnNegFLYabZKfjZs7ZQi0aLx8MRZsl6fPnB3L0uFf9N9zcIxxdnl1RAPe3cHy3PIMi+4603shFLnS6J3cJ5+c0SxjvS/nQT+p0P7aepTjLIM+suFMKGUefwkxsh3Oh3hZY/n3K/FP7uhjnH2w6NAekLMxFw8zpjcfH/BIV8nGVJ3CN5O/oTOq8xxj2ftOV8rrMn/G9ufwdZF6/7vbHAm1G5byRH3laR73PnR4/8bqF7o3yU3AcX1ip38BeYRujw==" label="Checkpoint 3: slots" />
-
----
-layout: default
----
-
-## Checkpoint 4 · composables
-
-<Playground url="https://play.vuejs.org/#eNqVVW2P4zQQ/isjA2or2qR7K0DKJt3jTisdCC0nDsEHzAc3mbbec+zInnRbqv53ZLtJX/blIJ+SmXlmnnnsmezYj02TrFtkGctdaWVD4JDaBpTQy4IzcpzNuJZ1YyzBvSG8qyQZCwtrahgkaWnqxmjU5NKj12ccnKHeC1u9hPG+c8QOWofe5WB/jnJirtClnfsC8qex1XvTanoZ1ocMuOa6NNp5rDaEYygVCgt7KPryw8EHs4UVgmgs6kpWJkmSwagDPvb1irPyQ59vxHWeRk1nvlZOWDdKEM64BshrIXV4A8hXV7N3ypRQoWciXJ6urjpfr15W+tQFZ33VcDQQnj45fLVCUaHtPT79m9m9IQGipFaoPF29OfXOWyKjgbYNFpzFL87gbalk+bngLKjC2ewXWTdS2DyNIcfS6UljvfHkqqwntalQFZx5WTiD9DTwSHxhDKEtONtBGQ/xpEGAvJntes8eGqHE3IqhG+Vp8zyZaOgEjLKnB90vWOeOtsq/zk21hR0sjKbJQtRSbTNwW0dYT1o5Bie0mzi0cnEDtbBLqTOY3kAjqkrqZQZXFusb2HPty8AOarGZPMqKVhlcfx98PQpESybEEm5IWBSwg0Ps1XT6zQ3MzWbi5D8h8dzYCu1kbjYn1ZIfvgs5PdsMpF6hlRRS5mlsiI3ZixP6hZmvcCE1frSmccMdhCP8Q6gWM/hEVuol7Ps5wFr6EYiIu1qSG/41aJtKEGZH4ODvL4xEp0M8uWztQQVnxwycRZc1j67g7GraGRolSlwZVYX7c+dLzBFaLcI8JUnSBb6Vumn9EHnKw2c4juFrXKOmhIRdIiWBxCjC0/N781TbbpP9L2XDjc7gvq3naIOor2nksCRpNJRKOK9BKWzVj0l+mP3cKUOgRe3li7Ywdnl6thxiWNp9xfk7B0cbZ8ftEwfw9hamh5QHWJyuA73nhbpY3smDYxnr97fFRb+249+Aa9wE56LVset+L0stSQoFBQwGI9j54vEq+hUDhU/WxYzisulzhH02PIAgAOIph2TeuI8Ii9Raffl34Hr/tJ9+81/05MNawuq/NHbx94j8Dhy6PMPhCIrZJfGErKyHI7h9aktcoyQNU87dt+koUaiXtIIMpj7HKPZCrjR6IZfJgzOaZSwU5qFFqdD+2niGjrOsk4wzoZR5/DnYyLY47uzlCsvPz9gf3MbbOPto0aFdI2e9Lw5adN99uscNnThrU7UKX3X+hs6o1nOMYe9aXSl/Z8dnbH8KZyL18nd3tyHUrmvKEw2nPo59r1t8/0rrR7rXyfXhtuzZ/l+n6ibr" label="Checkpoint 4: composables" />
-
----
-layout: two-cols
----
-
-# Reto final
-
-<v-clicks>
-
-- Añade un botón para **copiar** la nota al portapapeles.
-- Muestra también el número de caracteres.
-- Extrae el contador a `useWordCount`.
-- Compón `useNotes` + `useWordCount` en un `useNoteEditor`.
-
-</v-clicks>
-
-::right::
-
-# Recap
-
-<v-clicks>
-
-- `<script setup>` → estado y lógica juntos.
-- `props` / `emits` → componentes.
-- `slots` → composición visual.
-- `composables` → composición de lógica.
-
-</v-clicks>
-
----
 layout: hero-image
 image: /teclado.gif
 class: text-center
@@ -2049,9 +1963,111 @@ layout: quote
 
 # Composables
 
-- Extraen lógica reactiva reutilizable.
-- Se componen entre sí: `useNotes` + `useWordCount`.
-- En código nuevo: `<script setup>` + composables.
+- Extraen **lógica reactiva** reutilizable a una función `useX()`.
+- Se llaman en `setup` (o en otro composable) **sincrónicamente**.
+- Se componen entre sí: `useNotes` + `useWordCount` → `useNoteEditor`.
+
+---
+layout: two-cols-header
+---
+
+# De componente a composable
+
+::left::
+
+### Antes · todo en el componente
+
+```vue
+<script setup>
+import { ref, computed } from 'vue'
+
+const note = ref('')
+
+const wordCount = computed(() =>
+  note.value.trim() ? note.value.trim().split(/\s+/).length : 0
+)
+</script>
+```
+
+::right::
+
+### Después · `composables/useWordCount.js`
+
+```js
+import { computed } from 'vue'
+
+export function useWordCount(note) {
+  return computed(() =>
+    note.value.trim() ? note.value.trim().split(/\s+/).length : 0
+  )
+}
+```
+
+En el componente: `const wordCount = useWordCount(note)`
+
+---
+layout: two-cols
+---
+
+# Reglas y trampas
+
+<v-clicks>
+
+- Llamar en `setup` o dentro de otro composable. **Nunca** tras un `await` ni dentro de un `if`.
+- Devolver `ref`s (o `toRefs` si devuelves `reactive`) para no perder reactividad al desestructurar.
+- No extraigas antes de tiempo: solo si se reutiliza o el componente se ensucia.
+
+</v-clicks>
+
+::right::
+
+## Ojo con el estado
+
+<v-clicks>
+
+- Cada llamada crea **estado nuevo**: `useNotes()` en dos componentes = dos notas.
+- Estado compartido → módulo o **Pinia**.
+- Un composable puede usar otros composables (eso es el Lego).
+
+</v-clicks>
+
+---
+layout: two-cols-header
+---
+
+# Componer composables
+
+::left::
+
+```js
+import { computed } from 'vue'
+import { useNotes } from './useNotes'
+import { useWordCount } from './useWordCount'
+
+export function useNoteEditor(initial = '') {
+  const { note, clear } = useNotes(initial)
+  const wordCount = useWordCount(note)
+  const charCount = computed(() => note.value.length)
+
+  return { note, clear, wordCount, charCount }
+}
+```
+
+::right::
+
+<v-clicks>
+
+- `useNoteEditor` **no pinta nada**: solo expone estado y funciones.
+- La vista solo consume:
+
+```vue
+<script setup>
+const { note, clear, wordCount, charCount } =
+  useNoteEditor('Hoy he aprendido...')
+</script>
+```
+
+</v-clicks>
 
 ---
 layout: image
@@ -2059,6 +2075,116 @@ image: /lego.jpeg
 title: Composables (Lego)
 backgroundSize: contain
 ---
+
+---
+layout: two-cols
+---
+
+# Refresco rápido
+
+## Estado y contrato
+
+<v-clicks>
+
+- `ref` / `computed` → estado reactivo y valores derivados.
+- `defineProps` + `defineEmits` + `v-model` → contrato del componente.
+
+</v-clicks>
+
+::right::
+
+## Composición
+
+<v-clicks>
+
+- Slots (con nombre y _scoped_) → UI · `useX()` → lógica.
+
+</v-clicks>
+
+---
+layout: section
+---
+
+# Práctica guiada: bloc de notas
+
+<!-- image centered -->
+<div class="text-center">
+  <img src="/cortar.gif" class="m-auto object-contain max-h-[24rem]" />
+</div>
+
+---
+layout: default
+---
+
+# Qué vamos a construir
+
+<v-clicks>
+
+- Un **bloc de notas** con contador de palabras.
+- Empezamos con `<script setup>` y acabamos con composables.
+- Cada checkpoint tiene un playground embebido: cambia el código y prueba.
+- Al final, une todo en una mini-app.
+
+</v-clicks>
+
+---
+layout: default
+---
+
+## Checkpoint 1 · `<script setup>`
+
+<Playground url="https://play.vuejs.org/#eNp9U9GK2zAQ/JVFUJLQ2E442oJjp/SOe2gf2tL2US+KvbF1lSUhrRKnJv9+yL6kgZZ7EzOzszOLPbBP1qaHgCxnha+ctAQeKVhQQjclZ+Q523ItO2scwQAO90uoTGcDYQ1n2DvTwewQcMY115XRnkAbQiijdD6bLS7o0bj6wQRNUF4N5vMFlFuuYZxJD0IFTMnJbr6Aj/9iqbdK0jzj3L/NFqlC3VALOay4XnBdZFOBbUxSEHZWCcLRveiE1OMLoGjX23tlKqgxbhC+yNr1hSPsSTgUcEg6U6MqOYspOANnjr7kbL3iDKwSFbZG1ehKzh7j2h1C0GI0TNOUM8gulnY7DDflz2ewQomdE3O/KDI75cteAhbZTW6uC08nFZ87U59ggL3RlOxFJ9UpB3/yhF0S5BK80D7x6OR+A51wjdQ5rDZgRV1L3eSwdtht4Mx1XAMDdKJPjrKmNoe79yN3nQIRyIza6y0GeNGuV6s3G9iZPvHyz2i8M65Gl+xMf7Mt/fBu9Ixpc5C6RSdptCyyqRBbMvKV0XvZpE/eaJazId6Bs/hlSIXumyVptOcsh2E6JGdCKXP8MmLkAi4veNVi9fs/+JPvI8bZd4ce3QE5u3IkXIM00Y8/v2JPN2Rn6qDwVfIHeqNCzDjJ7oOuFbob3Zj28/jfSN388o89ofaXUjFoVJ6XU+9DwIdXqv+Ne5fejXNcn9n5GVwSP6M=" label="Checkpoint 1: script setup" />
+
+---
+layout: default
+---
+
+## Checkpoint 2 · componentes
+
+<Playground url="https://play.vuejs.org/#eNqFVE2P0zAQ/SsjC9RUtEmrFSClSYFFPcBhWbGIC+bgJtPUi2Nb9qQfRP3vyMn2A7Hs3qx5b+a9sZ/csg/WxpsGWcoyXzhpCTxSY0EJXeWckedszrWsrXEELThcjaAwtW0ISzjAypkaBpsGByfSjSFclJKMe0DjJDQYjZp8ckbjvovrwmhPoA0h5EEgGgyGx+rWuPKjaTRBfpKNoiHkc66h64k3QjUYk5N1NIR3/9Zib5WkKOHcv0qGsUJd0RpSmHA95DpL+rXnwUlGWFslCLvpWS2k7k4A2Xo6v1amgBKDgvBZsp4esYuNN+PalKhyzoIPziA5kuy8bS/WORzACiWWTkR+mCW2V0weJLPkwgnXmae9CselKffQwspoGq9ELdU+Bb/3hPW4kSPwQvuxRydXM6iFq6ROYTIDK8pS6iqFqcN6Bgeugwy0UIvdeCtLWqdw9abDTl0gGjIdl3BHwqGAFh6408nk5QyWZjf28nc3eGlciW68NLsLtfjt625mcJuC1Gt0krqRWdIvxEbsv9F4JpElrqTGW2esj1roLv17ePQU7shJXcHhlCGsZYhP37GoJfnox6CxpSBMz42Dn8+k4XgP/XumXcRyzs4TOOshZ7Y+52w6ORasEgWujSrR5ZwtgsQSodGii1Icx0fie6ltQzlnwXL0iMcRvMANaopJuAqpz/mwb0/+zg0bMfKF0StZxffeaJayNtB4d+VSoftiSRrtOUuh7fU5E0qZ7eeuRq7B0bFerLH49Uj93u9CjbNbhx7dBjk7Yb3HHl7c3eCOLsDalI3CJ8Gv6I1qgseedt3oUqG74HVuP3XfjtTVN7/YEWp/XCoYDczDqN970+DHJ1Y/272Kr7o+rg/s8AePJL0m" label="Checkpoint 2: componentes" />
+
+---
+layout: default
+---
+
+## Checkpoint 3 · slots
+
+<Playground url="https://play.vuejs.org/#eNqVVcFu4zYQ/ZUB28I2akv2Bm0BRXLaDXxoD+miW/RS9kBLY4tbihTIkeNU8L8XJC3ZabJZ1Cd5Zt7Mm0c+qWc/tW1y6JBlLHellS2BQ+paUELvC87IcbbmWjatsQQ9WNzNoTRN2xFWcIKdNQ1MDh1OxqIHQ7ipJBl7ziapBxiNmlx6ySYvUPfCVp/D+NwZwXVptCPQhhAKT2k6mcyG6KOx1b3pNEExEp1OZ1CsuYaASQ5CdZiQlc10BncvY4lrlaRpyrn7Np0lCvWeashgyfWM6zyNQq09k5ywaZUgDN3zRkgdngDyerV+r0wJFfoJwuVpvRpy47ZZ6akWnI20g94QfmNz+KpGUaEdM779u/WDIQGipE6oPK3fXXDpFasxeHUuh0VjKlQFZ353ziC9LrxM3RlDaAvOegg84XTFDiBv1/2YOUErlNhaMXWzPG1fJxMDw/ZRs/Qs2n9Y546elH/cmuoJetgZTYudaKR6ysA9OcJm0ck5OKHdwqGVu1tohN1LncHyFlpRVVLvM1hZbG7hxLUfAz004rh4lBXVGdx8H3IjCkRHJtQSHklYFNDDuXa1XH5zC1tzXDj5T2i8NbZCu9ia49W05IfvQk/PNgOpa7SSQss8jQuxOfusHb7gwgp3UuMHa1o37SEc4R/+2mbwkazUeziNLsBGegNExKaR5KZ/Trq2EoTZBTj56wv3edAhnlwWTFJwdunAWUxZ8+gKzlbLIdAqUWJtVBXuz8aP2CJ0WgQzJEkyFP4oddt5B3jK01c4zuFrPKCmhITdI0WnziI8fX5vXmo7vDb+l7LhRmfw0DVbtEHUtzRyWJI0GkolnNegFLYabZKfjZs7ZQi0aLx8MRZsl6fPnB3L0uFf9N9zcIxxdnl1RAPe3cHy3PIMi+4603shFLnS6J3cJ5+c0SxjvS/nQT+p0P7aepTjLIM+suFMKGUefwkxsh3Oh3hZY/n3K/FP7uhjnH2w6NAekLMxFw8zpjcfH/BIV8nGVJ3CN5O/oTOq8xxj2ftOV8rrMn/G9ufwdZF6/7vbHAm1G5byRH3laR73PnR4/8bqF7o3yU3AcX1ip38BeYRujw==" label="Checkpoint 3: slots" />
+
+---
+layout: default
+---
+
+## Checkpoint 4 · composables
+
+<Playground url="https://play.vuejs.org/#eNqVVW2P4zQQ/isjA2or2qR7K0DKJt3jTisdCC0nDsEHzAc3mbbec+zInnRbqv53ZLtJX/blIJ+SmXlmnnnsmezYj02TrFtkGctdaWVD4JDaBpTQy4IzcpzNuJZ1YyzBvSG8qyQZCwtrahgkaWnqxmjU5NKj12ccnKHeC1u9hPG+c8QOWofe5WB/jnJirtClnfsC8qex1XvTanoZ1ocMuOa6NNp5rDaEYygVCgt7KPryw8EHs4UVgmgs6kpWJkmSwagDPvb1irPyQ59vxHWeRk1nvlZOWDdKEM64BshrIXV4A8hXV7N3ypRQoWciXJ6urjpfr15W+tQFZ33VcDQQnj45fLVCUaHtPT79m9m9IQGipFaoPF29OfXOWyKjgbYNFpzFL87gbalk+bngLKjC2ewXWTdS2DyNIcfS6UljvfHkqqwntalQFZx5WTiD9DTwSHxhDKEtONtBGQ/xpEGAvJntes8eGqHE3IqhG+Vp8zyZaOgEjLKnB90vWOeOtsq/zk21hR0sjKbJQtRSbTNwW0dYT1o5Bie0mzi0cnEDtbBLqTOY3kAjqkrqZQZXFusb2HPty8AOarGZPMqKVhlcfx98PQpESybEEm5IWBSwg0Ps1XT6zQ3MzWbi5D8h8dzYCu1kbjYn1ZIfvgs5PdsMpF6hlRRS5mlsiI3ZixP6hZmvcCE1frSmccMdhCP8Q6gWM/hEVuol7Ps5wFr6EYiIu1qSG/41aJtKEGZH4ODvL4xEp0M8uWztQQVnxwycRZc1j67g7GraGRolSlwZVYX7c+dLzBFaLcI8JUnSBb6Vumn9EHnKw2c4juFrXKOmhIRdIiWBxCjC0/N781TbbpP9L2XDjc7gvq3naIOor2nksCRpNJRKOK9BKWzVj0l+mP3cKUOgRe3li7Ywdnl6thxiWNp9xfk7B0cbZ8ftEwfw9hamh5QHWJyuA73nhbpY3smDYxnr97fFRb+249+Aa9wE56LVset+L0stSQoFBQwGI9j54vEq+hUDhU/WxYzisulzhH02PIAgAOIph2TeuI8Ii9Raffl34Hr/tJ9+81/05MNawuq/NHbx94j8Dhy6PMPhCIrZJfGErKyHI7h9aktcoyQNU87dt+koUaiXtIIMpj7HKPZCrjR6IZfJgzOaZSwU5qFFqdD+2niGjrOsk4wzoZR5/DnYyLY47uzlCsvPz9gf3MbbOPto0aFdI2e9Lw5adN99uscNnThrU7UKX3X+hs6o1nOMYe9aXSl/Z8dnbH8KZyL18nd3tyHUrmvKEw2nPo59r1t8/0rrR7rXyfXhtuzZ/l+n6ibr" label="Checkpoint 4: composables" />
+
+---
+layout: two-cols
+---
+
+# Reto final
+
+<v-clicks>
+
+- Añade un botón para **copiar** la nota al portapapeles.
+- Muestra también el número de caracteres.
+- Extrae el contador a `useWordCount`.
+- Compón `useNotes` + `useWordCount` en un `useNoteEditor`.
+
+</v-clicks>
+
+::right::
+
+# Lo que acabas de hacer
+
+<v-clicks>
+
+- Extraer lógica a `useWordCount` y componer `useNoteEditor`.
+- Conectar componentes con `v-model` y `defineProps`/`defineEmits`.
+- Rellenar slots con y sin nombre desde la app.
+
+</v-clicks>
 
 ---
 layout: hero-image
