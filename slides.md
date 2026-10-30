@@ -30,10 +30,10 @@ class: grid
 <h3 class="text-green-400 mb-3">Web Engineer | Vue.js Instructor</h3>
 
 - <logos-bluesky />&nbsp;[@paulmelero.com](https://bsky.app/profile/paulmelero.com)
-- 📩&nbsp;&nbsp;paulmelero@gmail.com
-- 🌐&nbsp;&nbsp;https://graficos.net
+- 📩&nbsp;&nbsp;contact@paulmelero.com
+- 🌐&nbsp;&nbsp;https://paulmelero.com
 - <logos-netlify-icon />&nbsp;&nbsp;[Slides](https://slides-vue-lemoncode.netlify.app/)
-- <logos-github-icon class="github-icon" />&nbsp;&nbsp;[GitHub](https://github.com/paulmelero/slides-vue-lemoncode)
+- <logos-github-icon class="github-icon" />&nbsp;&nbsp;[https://github.com/paulmelero/slides-vue-lemoncode](https://github.com/paulmelero/slides-vue-lemoncode)
 
 <style>
 .github-icon * {
@@ -93,8 +93,8 @@ layout: two-cols
 
 <v-clicks>
 
-- La IA genera código plausible; no sabe si es correcto.
-- Para depurar, revisar y escribir mejores prompts necesitas un modelo mental.
+- La IA genera código _plausible_ pero no sabe qué es correcto.
+- Para escribir mejores prompts necesitas un modelo mental.
 - Reactividad, componentes, props/emits, lifecycle y render se aprenden practicando.
 - La IA acelera; no sustituye entender.
 
@@ -122,7 +122,7 @@ function increment() {
 
 <v-click>
 
-Falta `count.value++`. La IA también olvida `.value`.
+Falta `count.value++`. La IA también puede olvidar un `.value`.
 
 </v-click>
 
@@ -368,7 +368,7 @@ layout: section
 layout: center
 ---
 
-# Objetos (<logos-javascript />)
+# Objetos ( en <logos-javascript /> puro)
 
 ```ts{all|1|3|1-5|all}
 const obj = { count: 0 }
@@ -536,6 +536,7 @@ layout: statement
 
 ---
 layout: section
+title: Mycomponent.vue
 ---
 
 <h1>
@@ -1899,55 +1900,6 @@ layout: default
 </v-clicks>
 
 ---
-layout: two-cols-header
----
-
-# ¿Qué necesitamos?
-
-### Stack 2026
-
-::left::
-<v-clicks>
-
-- **Editor**: <logos-visual-studio-code /> VS Code (Cursor/Windsurf opcionales).
-- **Extensión**: <logos-vue /> Vue - Official (antes Volar).
-- **Toolchain**: Vite+ (`vp`) con Vite, Vitest, Oxlint, Oxfmt...
-- **Paquetes**: <logos-pnpm /> pnpm (o el gestor que configure Vite+).
-- **DevTools**: <logos-vue /> Vue DevTools.
-
-</v-clicks>
-
-::right::
-
-<div class="relative">
-  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click=[1,2]>
-    <img src="/vscode.png" class="mb-5" alt="VS Code" />
-    <a href="https://code.visualstudio.com/docs/nodejs/vuejs-tutorial"><em>Using Vue in Visual Studio Code</em></a>
-  </div>
-
-  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click=[2,3]>
-    <img src="/vue-extension.png" alt="Extensión Vue - Official" />
-    <a href="https://marketplace.visualstudio.com/items?itemName=Vue.volar">Vue - Official (antes Volar)</a>
-  </div>
-
-  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click=[3,4]>
-    <div class="text-6xl font-mono font-bold text-emerald-500">vp</div>
-    <p class="mt-4"><strong>Vite+</strong> · toolchain unificada</p>
-    <a href="https://viteplus.dev"><code>viteplus.dev</code></a>
-  </div>
-
-  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click=[4,5]>
-    <img src="/pnpm-logo.png" alt="pnpm" />
-    <a href="https://pnpm.io/"><code>pnpm</code></a>
-  </div>
-
-  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click="5">
-    <img src="/devtools.png" alt="Vue DevTools" />
-    <a href="https://devtools.vuejs.org/">Vue Devtools</a>
-  </div>
-</div>
-
----
 layout: default
 ---
 
@@ -2034,6 +1986,7 @@ layout: quote
 
 - Composition API
 - Composables
+- Ejercicio práctico
 
 
 ---
@@ -2114,6 +2067,70 @@ class: text-center
 ---
 
 # <logos-vue /> ¡Vamos a seguir! 🚀
+
+---
+layout: default
+---
+
+# Qué vamos a construir II
+
+<v-clicks>
+
+- Un **clon de Google Keep** con Vue Router
+- Usaremos la API del navegador ["View Transition"](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API)
+- Usaremos tooling moderno en un caso de aplicación real.
+
+</v-clicks>
+
+
+---
+layout: two-cols-header
+---
+
+# ¿Qué necesitamos?
+
+### Stack 2026
+
+::left::
+<v-clicks>
+
+- **Editor**: <logos-visual-studio-code /> VS Code (Cursor/Windsurf opcionales).
+- **Extensión**: <logos-vue /> Vue - Official (antes Volar).
+- **Toolchain**: Vite+ (`vp`) con Vite, Vitest, Oxlint, Oxfmt...
+- **Paquetes**: <logos-pnpm /> pnpm (o el gestor que configure Vite+).
+- **DevTools**: <logos-vue /> Vue DevTools.
+
+</v-clicks>
+
+::right::
+
+<div class="relative">
+  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click=[1,2]>
+    <img src="/vscode.png" class="mb-5" alt="VS Code" />
+    <a href="https://code.visualstudio.com/docs/nodejs/vuejs-tutorial"><em>Using Vue in Visual Studio Code</em></a>
+  </div>
+
+  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click=[2,3]>
+    <img src="/vue-extension.png" alt="Extensión Vue - Official" />
+    <a href="https://marketplace.visualstudio.com/items?itemName=Vue.volar">Vue - Official (antes Volar)</a>
+  </div>
+
+  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click=[3,4]>
+    <div class="text-6xl font-mono font-bold text-emerald-500">vp</div>
+    <p class="mt-4"><strong>Vite+</strong> · toolchain unificada</p>
+    <a href="https://viteplus.dev"><code>viteplus.dev</code></a>
+  </div>
+
+  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click=[4,5]>
+    <img src="/pnpm-logo.png" alt="pnpm" />
+    <a href="https://pnpm.io/"><code>pnpm</code></a>
+  </div>
+
+  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click="5">
+    <img src="/devtools.png" alt="Vue DevTools" />
+    <a href="https://devtools.vuejs.org/">Vue Devtools</a>
+  </div>
+</div>
 
 ---
 layout: custom-cover
