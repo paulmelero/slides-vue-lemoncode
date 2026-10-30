@@ -2033,15 +2033,8 @@ layout: quote
 # Agenda
 
 - Composition API
+- Composables
 
-
----
-layout: hero-image
-image: /teclado.gif
-class: text-center
----
-
-# Vuelta a los teclados!
 
 ---
 layout: hero-image
@@ -2096,13 +2089,6 @@ title: Code Side by Side
 backgroundSize: contain
 ---
 
-
----
-layout: image
-image: /setup-diagram.png
-title: Setup()
-backgroundSize: contain
----
 
 ---
 layout: quote
