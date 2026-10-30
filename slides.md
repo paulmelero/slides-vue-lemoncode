@@ -340,7 +340,7 @@ layout: statement
 
 <!-- image centered -->
 <div class="text-center">
-  <img src="/squeeze.gif" class="m-auto object-contain max-h-sm" />
+  <img src="/squeeze.gif" class="m-auto object-contain max-h-[24rem]" />
 </div>
 
 ---
@@ -531,7 +531,7 @@ layout: statement
 # Sintaxis
 
 <div class="text-center">
-  <img src="/bongo_lemon.webp" class="m-auto object-contain max-h-sm" />
+  <img src="/bongo_lemon.webp" class="m-auto object-contain max-h-[24rem]" />
 </div>
 
 ---
@@ -1881,7 +1881,7 @@ layout: section
 
 <!-- image centered -->
 <div class="text-center">
-  <img src="/cortar.gif" class="m-auto object-contain max-h-sm" />
+  <img src="/cortar.gif" class="m-auto object-contain max-h-[24rem]" />
 </div>
 
 ---
@@ -2004,7 +2004,7 @@ layout: quote
 
 # Docs
 
-<img src="/toggle.png" class="max-h-xs" />
+<img src="/toggle.png" class="max-h-[20rem]" />
 
 https://vuejs.org/guide/introduction.html
 
@@ -2105,28 +2105,28 @@ layout: two-cols-header
 ::right::
 
 <div class="relative">
-  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click=[1,2]>
+  <div class="absolute translate-y-[-50%] max-h-[28rem] overflow-hidden" v-click=[1,2]>
     <img src="/vscode.png" class="mb-5" alt="VS Code" />
     <a href="https://code.visualstudio.com/docs/nodejs/vuejs-tutorial"><em>Using Vue in Visual Studio Code</em></a>
   </div>
 
-  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click=[2,3]>
+  <div class="absolute translate-y-[-50%] max-h-[28rem] overflow-hidden" v-click=[2,3]>
     <img src="/vue-extension.png" alt="Extensión Vue - Official" />
     <a href="https://marketplace.visualstudio.com/items?itemName=Vue.volar">Vue - Official (antes Volar)</a>
   </div>
 
-  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click=[3,4]>
+  <div class="absolute translate-y-[-50%] max-h-[28rem] overflow-hidden" v-click=[3,4]>
     <div class="text-6xl font-mono font-bold text-emerald-500">vp</div>
     <p class="mt-4"><strong>Vite+</strong> · toolchain unificada</p>
     <a href="https://viteplus.dev"><code>viteplus.dev</code></a>
   </div>
 
-  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click=[4,5]>
+  <div class="absolute translate-y-[-50%] max-h-[28rem] overflow-hidden" v-click=[4,5]>
     <img src="/pnpm-logo.png" alt="pnpm" />
     <a href="https://pnpm.io/"><code>pnpm</code></a>
   </div>
 
-  <div class="absolute translate-y-[-50%] max-h-md overflow-hidden" v-click="5">
+  <div class="absolute translate-y-[-50%] max-h-[28rem] overflow-hidden" v-click="5">
     <img src="/devtools.png" alt="Vue DevTools" />
     <a href="https://devtools.vuejs.org/">Vue Devtools</a>
   </div>
@@ -2166,7 +2166,7 @@ layout: end
 }
 </style>
 
-# ¡Muchas Gracias! 🖖🏽 ❤️
+# 💚 🖖🏽 ¡Muchas Gracias! 🖖🏽 💚
 
 <div class="grid grid-cols-2 items-center gap-4 border bg-white mt-5">
   <div class="text-center p-16">
