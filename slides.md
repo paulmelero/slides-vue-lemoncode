@@ -1900,6 +1900,7 @@ layout: quote
 
 - Composition API
 - Composables
+- Ejercicio práctico guiado
 - Ejercicio práctico
 
 
@@ -1983,9 +1984,13 @@ import { ref, computed } from 'vue'
 
 const note = ref('')
 
-const wordCount = computed(() =>
-  note.value.trim() ? note.value.trim().split(/\s+/).length : 0
-)
+const wordCount = computed(() => {
+  return note.value.trim()
+  ? note.value
+    .trim()
+    .split(/\s+/).length
+  : 0
+})
 </script>
 ```
 
@@ -2009,13 +2014,12 @@ En el componente: `const wordCount = useWordCount(note)`
 layout: two-cols
 ---
 
-# Reglas y trampas
+# Recomendaciones
 
 <v-clicks>
 
-- Llamar en `setup` o dentro de otro composable. **Nunca** tras un `await` ni dentro de un `if`.
-- Devolver `ref`s (o `toRefs` si devuelves `reactive`) para no perder reactividad al desestructurar.
-- No extraigas antes de tiempo: solo si se reutiliza o el componente se ensucia.
+- Devolver objetos con `ref`s (o `toRefs` si devuelves `reactive`) para no perder reactividad al desestructurar.
+- No crear composables para todo: guiarse por la necesidad de reutilizar...
 
 </v-clicks>
 
@@ -2025,8 +2029,8 @@ layout: two-cols
 
 <v-clicks>
 
-- Cada llamada crea **estado nuevo**: `useNotes()` en dos componentes = dos notas.
-- Estado compartido → módulo o **Pinia**.
+- Cada llamada crea **estado nuevo**: `useNotes()` (instancias) en dos componentes = dos notas.
+- Estado compartido → Storage o **Pinia**.
 - Un composable puede usar otros composables (eso es el Lego).
 
 </v-clicks>
